@@ -21,7 +21,6 @@ public class JiraService {
 
     private static final String JIRA_URL = "https://ivonnedpa.atlassian.net";
     private static final String EMAIL = "ivonnedpa@gmail.com";
-    private static final String API_TOKEN = "ATATT3xFfGF0xxzgIOP5wzZgEfJWNpgNR96bCyfHFLiITrNMMycXnz3Jmx2qMA4Hwpp_xINQJQrtCvASHcvnbQ1Xhb5Icqyq3ixEVfEgTxS_3WScnRvV9wr-jNgqCPjf5j13_LQ8ElixzPNKT8fV41h2XoPNVlTiYU3i-cvEg3dJTubirHwMetc=911FC249";
     private static final String PROJECT_KEY = "HAC";
 
     private final ObjectMapper objectMapper = new ObjectMapper();
@@ -33,8 +32,7 @@ public class JiraService {
     public String createIssue(String summary, String description) {
 
         String endpoint = JIRA_URL + "/rest/api/3/issue";
-
-        String auth = EMAIL + ":" + API_TOKEN;
+        String auth = EMAIL + ":" + "token";
 
         String encodedAuth = Base64.getEncoder()
                 .encodeToString(auth.getBytes(StandardCharsets.UTF_8));
