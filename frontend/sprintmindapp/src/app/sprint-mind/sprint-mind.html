@@ -1,0 +1,45 @@
+<div class="page">
+
+  <div class="card">
+
+    <h1>🧠 Sprint Mind</h1>
+
+    <p class="subtitle">
+      Turn ideas into sprint plans instantly
+    </p>
+
+    <label>Description</label>
+
+    <textarea
+      [(ngModel)]="description"
+      placeholder="Write your project idea..."
+    ></textarea>
+
+    <label>Files</label>
+
+    <input type="file" multiple (change)="onFileSelected($event)" />
+
+    <div class="files" *ngIf="files.length">
+
+      <div class="file" *ngFor="let f of files">
+        📄 {{ f.name }}
+      </div>
+
+    </div>
+
+    <button
+      class="btn"
+      (click)="generate()"
+      [disabled]="loading"
+    >
+      {{ loading ? 'Generating...' : 'Generate 🚀' }}
+    </button>
+
+    <div class="result" *ngIf="generated">
+      <h3>Generated Sprint</h3>
+      <p>Your sprint backlog is ready 🎉</p>
+    </div>
+
+  </div>
+
+</div>

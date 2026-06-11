@@ -8,4 +8,4 @@ import { SprintMind } from './sprint-mind/sprint-mind';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class AppComponent {}
+export class App {}
